@@ -31,4 +31,5 @@
 # Uploading Static Site On IPFS easily with FLEEK
 
 1. Go to fleek.co and signin with github
-2. Then Connect your repository like netlify and KBOOM.
+2. Then Connect your repository like netlify and setup your site.
+3. Get the site Link https://rohit-decentralized-lottery.on.fleek.co/
