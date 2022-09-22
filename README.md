@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Setup
 
-## Getting Started
+1. Install Nextjs with `yarn create next-app .` (FULLSTOP IS IMPORTANT)
 
-First, run the development server:
+2. Install React-Moralis to build web3 frontend easily.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+3. Install "Web3UIKit" = Beautiful and Lightweight UI components for web3 developers. This UI library will speed up your Dapp development no matter which chain you build on.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Create Header.jsx
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+5. Create LotteryEntrance.jsx
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+6. Go back to contract directory and run local hardhat node chain.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+7. Create a new file "update-frontend-deploy" script into deploy folder in hardhat-lottery-smartcontract directory. This script will create constants (abi stuff) folder automatically everytime we update the backend files.
 
-## Learn More
+8. Run `yarn build` to build a static site of nextjs version. This site have no way to talk with the backend. Since we are deploying it on IPFS we didn't need the backend.
 
-To learn more about Next.js, take a look at the following resources:
+9. Then run `yarn next export` which will make a folder "out" consisting the static site which we can upload on IPFS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Note: Step 9 will fail if any server side stuff is available.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Uploading Static Site On IPFS
 
-## Deploy on Vercel
+1. Download Desktop IPFS or You can run a node on Brave Browser.
+2. Import the "out" folder.
+3. CLick "Set Pinning" and apply.
+4. Copy CID
+5. search `ipfs://copy-cid` or NEXTJS Static site link `ipfs://QmeH7oCUPP3eeCUcQoAqjFjoKeHgcCNrQHFQ5CLZ3Fki5G/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Uploading Static Site On IPFS easily with FLEEK
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Go to fleek.co and signin with github
+2. Then Connect your repository like netlify and setup your site.
+3. Get the site Link https://rohit-decentralized-lottery.on.fleek.co/
